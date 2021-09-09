@@ -48,9 +48,7 @@ function clickClr(){
 
 function clickEql(){
     if(!isOperator()){
-        let value = getResult()
-        console.log(value);
-        res.innerText = value;
+        res.innerText = getResult();
     }
 }
 
@@ -81,7 +79,6 @@ function getResult(){
         else if(splitUp.includes('+')){
             sumIndex = splitUp.indexOf('+');
             sumResult = parseInt(splitUp[sumIndex-1], 2) + parseInt(splitUp[sumIndex+1], 2);
-            console.log(sumResult.toString());
             splitUp.splice(sumIndex-1, 3, sumResult.toString(2));
             operators.splice(operators.indexOf('+'), 1);
         }
